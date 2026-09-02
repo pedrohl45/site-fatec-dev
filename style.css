@@ -1,0 +1,384 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* PALETA PADRÃO: YAMADA (Verde supermercado para todo o site por padrão) */
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+/* HERO SECTION (HOME) */
+.hero {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 80px 20px;
+    border-bottom: 5px solid #27ae60; /* Destaque verde Yamada */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #27ae60;
+}
+
+.hero h2 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #bdc3c7;
+}
+
+/* CHARACTERS SECTION (HOME) */
+.characters-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.characters-section h2 {
+    font-size: 2rem;
+    color: #27ae60;
+    margin-bottom: 10px;
+}
+
+.characters-section p {
+    color: #7f8c8d;
+}
+
+/* =========================================
+   NOVO GRID DE REPARTIÇÕES (HOME)
+   ========================================= */
+.character-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.character-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.character-link:hover {
+    transform: translateY(-10px); /* Leve animação para cima ao passar o mouse */
+}
+
+.character-link h3 {
+    margin-top: 15px;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    transition: color 0.3s;
+}
+
+.character-link:hover h3 {
+    color: #27ae60; /* Muda pro verde ao passar o mouse */
+}
+
+.character-image-box {
+    width: 300px;
+    height: 300px; /* Formato quadrado, proporção 1:1 */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    background-color: #e0e0e0;
+}
+
+.responsive-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem cobrir toda a área sem distorcer */
+    display: block;
+}
+
+
+/* =========================================
+   NAV E PÁGINAS DE PERSONAGENS (PADRÃO CLARO)
+   ========================================= */
+.back-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: background-color 0.4s, box-shadow 0.4s;
+}
+
+.back-nav a {
+    text-decoration: none;
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.back-nav a:hover {
+    text-decoration: underline;
+}
+
+/* A paleta Yamada é o padrão para Sasaki e Home */
+.character-page {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #f0fff4; /* Fundo esverdeado clarinho */
+    border-radius: 10px;
+    border-top: 5px solid #27ae60; /* Borda verde */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: background-color 0.4s, box-shadow 0.4s, border-color 0.4s;
+    
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.character-portrait {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    object-fit: cover;
+}
+
+.character-info {
+    flex: 1;
+}
+
+.character-info h1 {
+    font-size: 3rem;
+    color: #27ae60;
+    transition: color 0.4s;
+}
+
+.character-info .subtitle {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    font-style: italic;
+    transition: color 0.4s;
+}
+
+.character-details p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+
+/* =========================================
+   LÓGICA DA TAYAMA (DARK MODE EXCLUSIVO)
+   ========================================= */
+
+.persona-yamada {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.persona-tayama {
+    display: none; 
+}
+
+/* QUANDO O BOTÃO É CLICADO E O BODY GANHA '.tayama-mode' */
+body.tayama-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.tayama-mode .back-nav {
+    background: #1e1e1e;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+body.tayama-mode .back-nav a {
+    color: #ff4d4d; /* Vermelho cereja (cigarro/neon) */
+}
+
+body.tayama-mode .character-page {
+    background-color: #1a1a1a;
+    border-top: 5px solid #ff4d4d; /* Muda a borda para vermelho */
+    box-shadow: 0 5px 25px rgba(0,0,0,0.9);
+}
+
+body.tayama-mode .character-info h1 {
+    color: #ff4d4d; 
+}
+
+body.tayama-mode .character-info .subtitle {
+    color: #888; 
+}
+
+body.tayama-mode .character-details p {
+    color: #e0e0e0;
+}
+
+/* Troca as personas da Yamada -> Tayama */
+body.tayama-mode .persona-yamada {
+    display: none;
+}
+
+body.tayama-mode .persona-tayama {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* BOTÃO DE TROCA DA YAMADA */
+#toggle-persona {
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+#toggle-persona:hover {
+    background-color: #1a252f;
+}
+
+body.tayama-mode #toggle-persona {
+    background-color: #ff4d4d; 
+    color: #fff;
+}
+
+body.tayama-mode #toggle-persona:hover {
+    background-color: #cc0000;
+}
+
+/* RESPONSIVIDADE P/ CELULARES */
+@media (max-width: 768px) {
+    .character-page, .persona-yamada, .persona-tayama {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .character-portrait, .character-image-box {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    margin-top: 50px;
+}
+
+/* =========================================
+   FORMULÁRIO DE CADASTRO (NEWSLETTER)
+   ========================================= */
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-container h1 {
+    color: #27ae60;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.form-container .subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group select:focus {
+    border-color: #27ae60;
+    outline: none;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    color: #333;
+    cursor: pointer;
+}
+
+.checkbox-group input {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.btn-submit {
+    background-color: #27ae60;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #219150;
+    transform: translateY(-2px);
+}
