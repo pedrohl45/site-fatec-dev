@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamada / Tayama - Personagem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- O id no body nos ajudará a manipular o Dark Mode no JavaScript -->
+<body id="yamada-body">
+    <nav class="back-nav">
+        <a href="index.html">&larr; Home</a>
+        <button id="toggle-persona">Mudar para Tayama (Dark Mode)</button>
+    </nav>
+
+    <!-- Usando a classe wrapper para a paleta da Yamada inicialmente -->
+    <main class="character-page yamada-page-wrapper">
+        
+        <!-- ==============================================
+             Persona 1: YAMADA (Aparece no Modo Claro) 
+             ============================================== -->
+        <div class="persona-yamada">
+            <!-- Imagem da Yamada -->
+            <img src="https://i.pinimg.com/736x/c1/81/98/c1819817a2fed81e1de041da5b2b4466.jpg" alt="Yamada (Caixa)" class="character-portrait">
+            
+            <div class="character-info">
+                <h1>Yamada</h1>
+                <p class="subtitle">A caixa sorridente (Caixa Nº 2)</p>
+                <div class="character-details">
+                    <p>Yamada é a atendente do supermercado que Sasaki adora ver. Ela tem sempre uma atitude brilhante, um sorriso acolhedor e é muito gentil com os clientes, sendo a funcionária mais simpática do local e o motivo de Sasaki passar ali toda noite.</p>
+                    <p>Para Sasaki, o sorriso dela é a cura para um longo dia de trabalho. No entanto, ela esconde um "pequeno" segredo depois que tira o uniforme, solta o cabelo e relaxa nos fundos da loja...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==============================================
+             Persona 2: TAYAMA (Aparece no Modo Escuro) 
+             ============================================== -->
+        <div class="persona-tayama">
+            <!-- Imagem da Tayama -->
+            <img src="https://i.pinimg.com/736x/fa/22/79/fa2279a2dda1973c8e9dcabdff003963.jpg" alt="Tayama" class="character-portrait" style="object-position: top; object-fit: cover;">
+            
+            <div class="character-info">
+                <h1>Tayama</h1>
+                <p class="subtitle">A companheira de cigarro misteriosa</p>
+                <div class="character-details">
+                    <p>Atrás do supermercado, Tayama é uma jovem descolada, com jaqueta de couro, piercings, atitude mais provocativa e sarcástica, que sempre está fumando e gosta de conversar com Sasaki.</p>
+                    <p>Na verdade, Tayama é a própria Yamada sem o uniforme e a postura de "atendimento ao cliente". Ela acha super divertido que Sasaki não perceba que as duas são a mesma pessoa, aproveitando a ingenuidade dele para provocá-lo enquanto fazem companhia um ao outro sob a noite estrelada.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- O Script que faz a mágica acontecer -->
+    <script>
+        const btn = document.getElementById('toggle-persona');
+        const body = document.getElementById('yamada-body');
+        
+        btn.addEventListener('click', () => {
+            // Adiciona ou remove a classe 'tayama-mode' do body
+            body.classList.toggle('tayama-mode');
+            
+            // Troca o texto do botão de acordo com o modo atual
+            if(body.classList.contains('tayama-mode')) {
+                btn.textContent = 'Mudar para Yamada (Light Mode)';
+            } else {
+                btn.textContent = 'Mudar para Tayama (Dark Mode)';
+            }
+        });
+    </script>
+</body>
+</html>

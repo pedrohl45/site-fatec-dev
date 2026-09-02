@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Super no Ura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="back-nav">
+        <a href="index.html">&larr; Voltar para a Home</a>
+    </nav>
+
+    <!-- Usamos a estrutura base da character-page para manter o padrão visual verde -->
+    <main class="character-page" style="display: block;">
+        <div class="form-container">
+            <h1>Receba Atualizações!</h1>
+            <p class="subtitle">Inscreva-se para não perder nenhuma novidade sobre o mangá e o futuro anime.</p>
+            
+            <!-- action="#" indica que o form não vai pra nenhum lugar ainda (apenas esqueleto) -->
+            <form action="#" method="POST" class="newsletter-form">
+                
+                <div class="form-group">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="personagem">Quem é seu personagem favorito?</label>
+                    <select id="personagem" name="personagem">
+                        <option value="sasaki">Sasaki (O Assalariado)</option>
+                        <option value="yamada">Yamada (A Caixa)</option>
+                        <option value="tayama">Tayama (A Fumante)</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="notificacoes" name="notificacoes" checked>
+                    <label for="notificacoes">Quero receber alertas de novos capítulos por e-mail</label>
+                </div>
+                
+                <!-- O botão apenas recarrega a página por enquanto -->
+                <button type="submit" class="btn-submit">Cadastrar na Newsletter</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>Criado por um fã para fins de aprendizado.</p>
+    </footer>
+</body>
+</html>
+
