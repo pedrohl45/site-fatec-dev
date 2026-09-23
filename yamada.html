@@ -1,0 +1,117 @@
+<!DOCTYPE html> <!-- isso aqui diz que é HTML5 -->
+<html lang="pt-br"> <!-- começa o html em português -->
+<head> <!-- head - parte invisível da página, tipo as configs -->
+    <meta charset="UTF-8"> <!-- pra aceitar acentos, ç e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- faz o site funcionar certinho no celular também -->
+    <title>Yamada / Tayama - Personagem</title> <!-- título que fica lá na aba do navegador -->
+    <!-- puxando o css do bootstrap da cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- nosso css próprio com o visual do site -->
+</head>
+<!-- id yamada-body pro js conseguir achar o body e meter o dark mode -->
+<body id="yamada-body">
+
+    <!-- barra de navegação (navbar) lá em cima -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="yamada-navbar"> <!-- navbar escura, no PC fica expandida, com id pra trocar de cor no dark mode -->
+        <div class="container"> <!-- centraliza tudo na página -->
+            <a class="navbar-brand" href="index.html">🚬 Super no Ura</a> <!-- logo e nome do site que leva pra home -->
+            <!-- aquele menuzinho ☰ que só aparece no celular -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir navegação">
+                <span class="navbar-toggler-icon"></span> <!-- ícone das 3 barrinhas -->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"> <!-- área do menu que esconde e abre no celular -->
+                <ul class="navbar-nav ms-auto"> <!-- links do menu jogados pra direita (ms-auto) -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a> <!-- link de volta pra home -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sasaki.html">Sasaki</a> <!-- link pra página do Sasaki -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="yamada.html">Yamada</a> <!-- link ativo porque a gente tá nessa página -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro.html">Cadastro</a> <!-- link pro form de cadastro -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- botão pra trocar de persona: Yamada (claro) e Tayama (escuro) -->
+    <div class="text-center my-3"> <!-- centraliza o botão com margem em cima e embaixo -->
+        <button id="toggle-persona" class="btn btn-dark btn-lg rounded-pill px-4">Mudar para Tayama (Dark Mode)</button> <!-- botãozão escuro e arredondado (pílula) -->
+    </div>
+
+    <!-- área principal do personagem com o layout específico -->
+    <main class="character-page yamada-page-wrapper"> <!-- embrulho com as cores da Yamada -->
+        
+        <!-- Persona 1: Yamada no modo claro (some quando ativa o dark mode) -->
+        <div class="persona-yamada"> <!-- container da Yamada, já começa aparecendo por padrão -->
+            <!-- fotinha da Yamada -->
+            <img src="https://i.pinimg.com/736x/c1/81/98/c1819817a2fed81e1de041da5b2b4466.jpg" alt="Yamada (Caixa)" class="character-portrait"> <!-- retrato da Yamada de uniforme -->
+            
+            <div class="character-info"> <!-- textinhos e dados da personagem -->
+                <!-- badges / etiquetas com informações da Yamada -->
+                <h1>Yamada <span class="badge bg-success rounded-pill">Caixa Nº 2</span></h1> <!-- nome dela com a badgezinha verde redonda -->
+                <p class="subtitle">A caixa sorridente <span class="badge bg-info text-dark">Supermercado</span></p> <!-- subtítulo com a badgezinha azul clara -->
+                <div class="character-details"> <!-- história e detalhes da personagem -->
+                    <p>Yamada é a atendente do supermercado que Sasaki adora ver. Ela tem sempre uma atitude brilhante, um sorriso acolhedor e é muito gentil com os clientes, sendo a funcionária mais simpática do local e o motivo de Sasaki passar ali toda noite.</p>
+                    <p>Para Sasaki, o sorriso dela é a cura para um longo dia de trabalho. No entanto, ela esconde um "pequeno" segredo depois que tira o uniforme, solta o cabelo e relaxa nos fundos da loja...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Persona 2: Tayama no dark mode (fica escondida até clicar no botão) -->
+        <div class="persona-tayama"> <!-- container da Tayama, o CSS esconde ela de início -->
+            <!-- fotinha da Tayama -->
+            <img src="https://i.pinimg.com/736x/fa/22/79/fa2279a2dda1973c8e9dcabdff003963.jpg" alt="Tayama" class="character-portrait" style="object-position: top; object-fit: cover;"> <!-- retrato da Tayama cortado pelo topo pra focar no rosto -->
+            
+            <div class="character-info"> <!-- textinhos e detalhes da persona alternativa -->
+                <!-- badges / etiquetas com informações da Tayama -->
+                <h1>Tayama <span class="badge bg-danger rounded-pill">Identidade Secreta</span></h1> <!-- nome com badgezinha vermelha de perigo/secreta -->
+                <p class="subtitle">A companheira de cigarro misteriosa <span class="badge bg-dark">Rebelde</span></p> <!-- subtítulo com badgezinha preta rebelde -->
+                <div class="character-details"> <!-- história e lore da Tayama nos fundos da loja -->
+                    <p>Atrás do supermercado, Tayama é uma jovem descolada, com jaqueta de couro, piercings, atitude mais provocativa e sarcástica, que sempre está fumando e gosta de conversar com Sasaki.</p>
+                    <p>Na verdade, Tayama é a própria Yamada sem o uniforme e a postura de "atendimento ao cliente". Ela acha super divertido que Sasaki não perceba que as duas são a mesma pessoa, aproveitando a ingenuidade dele para provocá-lo enquanto fazem companhia um ao outro sob a noite estrelada.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- rodapé bem simples no final da página -->
+    <footer>
+        <p>Criado por um fã para fins de aprendizado.</p>
+    </footer>
+
+    <!-- script do bootstrap, sem isso o menu do celular não funciona -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- nosso script próprio que faz a mágica de alternar Yamada e Tayama -->
+    <script>
+        // pega o botão de alternar pelo id
+        const btn = document.getElementById('toggle-persona');
+        // pega o body pelo id pra gente conseguir mexer na classe dele
+        const body = document.getElementById('yamada-body');
+        
+        // quando clicar no botão, roda isso aqui:
+        btn.addEventListener('click', () => {
+            // liga/desliga o dark mode colocando ou tirando a classe 'tayama-mode'
+            body.classList.toggle('tayama-mode');
+            
+            // confere se o dark mode ficou ligado:
+            if(body.classList.contains('tayama-mode')) {
+                // se tiver ligado: botão vira vermelho e muda o texto pra voltar pra Yamada
+                btn.textContent = 'Mudar para Yamada (Light Mode)';
+                btn.classList.remove('btn-dark');    // tira o visual preto
+                btn.classList.add('btn-danger');      // mete a cor vermelha
+            } else {
+                // se tiver desligado: volta o botão pro visual escuro original
+                btn.textContent = 'Mudar para Tayama (Dark Mode)';
+                btn.classList.remove('btn-danger');   // tira o vermelho
+                btn.classList.add('btn-dark');        // volta a classe escura
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html> <!-- isso aqui diz que é HTML5 -->
+<html lang="pt-br"> <!-- começa o HTML em português brasileiro -->
+<head> <!-- head - parte invisível da página, tipo as configs -->
+    <meta charset="UTF-8"> <!-- pra aceitar acentos, ç e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- faz o site funcionar certinho no celular também -->
+    <title>Cadastro - Super no Ura</title> <!-- o nome que fica lá em cima na aba do navegador -->
+    <!-- puxando o CSS do Bootstrap pelo CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- nosso CSS com o visual próprio -->
+</head>
+<body> <!-- body - tudo que aparece na tela começa aqui -->
+
+    <!-- navbar do topo -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- barra escura que fica expandida em telas grandes -->
+        <div class="container"> <!-- centraliza o conteúdo dentro da navbar -->
+            <a class="navbar-brand" href="index.html">🚬 Super no Ura</a> <!-- logo / link que volta pra home -->
+            <!-- menuzinho hambúrguer que só dá as caras no mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir navegação">
+                <span class="navbar-toggler-icon"></span> <!-- ícone clássico das 3 listras (☰) -->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"> <!-- parte do menu que fecha no celular -->
+                <ul class="navbar-nav ms-auto"> <!-- links do menu jogados pra direita com ms-auto -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a> <!-- link pra home -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sasaki.html">Sasaki</a> <!-- página do Sasaki -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="yamada.html">Yamada</a> <!-- página da Yamada -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="cadastro.html">Cadastro</a> <!-- active marca que a gente tá nessa página agora -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- miolo da página aproveitando o fundo verde das páginas de personagem -->
+    <main class="character-page" style="display: block;"> <!-- display: block sobrescreve o flexbox pra poder fluir o formulário de cima pra baixo -->
+        <div class="form-container"> <!-- caixinha centralizada do formulário -->
+            <h1>Receba Atualizações!</h1> <!-- título principal da página -->
+            <p class="subtitle">Inscreva-se para não perder nenhuma novidade sobre o mangá e o futuro anime.</p> <!-- subtítulo explicando o que é -->
+            
+            <!-- alerta de sucesso: nasce escondido (d-none) e o JS faz aparecer quando envia -->
+            <div class="alert alert-success alert-dismissible fade d-none" id="alertSucesso" role="alert"> <!-- alerta verdinho com botão de fechar, nasce invisível -->
+                ✅ <strong>Cadastro realizado com sucesso!</strong> Você receberá as novidades no seu e-mail.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button> <!-- botãozinho X pra fechar o alerta -->
+            </div>
+
+            <!-- formulário com os estilos de input do Bootstrap -->
+            <form action="#" method="POST" class="newsletter-form" id="formNewsletter"> <!-- action="#" é só pra fingir envio, não manda pra nenhum backend -->
+                
+                <!-- campo do nome -->
+                <div class="mb-3"> <!-- mb-3 dá um respiro embaixo de 1rem -->
+                    <label for="nome" class="form-label">Nome completo:</label> <!-- rótulo do campo -->
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required> <!-- input com estilo do bootstrap e required pra não deixar em branco -->
+                </div>
+                
+                <!-- campo do e-mail -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="seuemail@exemplo.com" required> <!-- type="email" já valida se tem @ e formato certo -->
+                </div>
+
+                <!-- seleção dropdown -->
+                <div class="mb-3">
+                    <label for="personagem" class="form-label">Quem é seu personagem favorito?</label>
+                    <select class="form-select" id="personagem" name="personagem"> <!-- dropdown estilizado pelo bootstrap -->
+                        <option value="sasaki">Sasaki (O Assalariado)</option> <!-- primeira opção -->
+                        <option value="yamada">Yamada (A Caixa)</option> <!-- segunda opção -->
+                        <option value="tayama">Tayama (A Fumante)</option> <!-- terceira opção -->
+                        <option value="outro">Outro</option> <!-- quarta opção -->
+                    </select>
+                </div>
+
+                <!-- caixinha de marcar (checkbox) -->
+                <div class="form-check mb-3"> <!-- form-check alinha direitinho o checkbox com o texto -->
+                    <input class="form-check-input" type="checkbox" id="notificacoes" name="notificacoes" checked> <!-- checked = já vem marcadinho por padrão -->
+                    <label class="form-check-label" for="notificacoes">Quero receber alertas de novos capítulos por e-mail</label> <!-- texto do lado da caixinha -->
+                </div>
+                
+                <!-- botão de submit -->
+                <button type="submit" class="btn btn-success btn-lg w-100">Cadastrar na Newsletter</button> <!-- botão verde grandão (btn-lg) ocupando a largura inteira (w-100) -->
+            </form>
+        </div>
+    </main>
+
+    <!-- rodapé simples -->
+    <footer>
+        <p>Criado por um fã para fins de aprendizado.</p>
+    </footer>
+
+    <!-- JS do Bootstrap pro menu mobile e o fechar do alerta funcionarem -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- script pra disparar o alerta quando envia o formulário -->
+    <script>
+        // pega o formulário pelo id e fica esperando o submit:
+        document.getElementById('formNewsletter').addEventListener('submit', function(e) {
+            e.preventDefault(); // trava pra página não recarregar
+            const alerta = document.getElementById('alertSucesso'); // puxa o elemento do alerta que tava escondido
+            alerta.classList.remove('d-none'); // tira o d-none pra ele voltar a existir na tela
+            alerta.classList.add('show');      // taca a classe show pra entrar com o fade bonitinho
+            this.reset();                      // zera todos os campos do formulário depois de enviar
+        });
+    </script>
+</body>
+</html>

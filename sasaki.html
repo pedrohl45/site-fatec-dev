@@ -1,0 +1,65 @@
+<!DOCTYPE html> <!-- isso aqui diz que é HTML5 -->
+<html lang="pt-br"> <!-- começo do html, já avisa que tá em português do Brasil -->
+<head> <!-- head - parte invisível da página, tipo as configs -->
+    <meta charset="UTF-8"> <!-- pra aceitar acentos, ç e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- faz o site funcionar certinho no celular também -->
+    <title>Sasaki - Personagem</title> <!-- título que vai aparecer lá na aba do navegador -->
+    <!-- puxando o css do bootstrap lá da cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- nosso css próprio com os estilos customizados -->
+</head>
+<body> <!-- body - tudo que aparece na tela começa aqui -->
+
+    <!-- navbar - barra de navegação lá no topo -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- navbar escura, no PC fica expandida -->
+        <div class="container"> <!-- centraliza tudo na página -->
+            <a class="navbar-brand" href="index.html">🚬 Super no Ura</a> <!-- logo/nome do site que volta pra home -->
+            <!-- aquele menuzinho ☰ que aparece no celular -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir navegação">
+                <span class="navbar-toggler-icon"></span> <!-- as 3 barrinhas do ícone hambúrguer -->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"> <!-- área que encolhe e vira sanfona no celular -->
+                <ul class="navbar-nav ms-auto"> <!-- links do menu jogados pra direita -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a> <!-- link pra voltar pra home -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="sasaki.html">Sasaki</a> <!-- link ativo porque já tamo na página do Sasaki -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="yamada.html">Yamada</a> <!-- link pra página da Yamada -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro.html">Cadastro</a> <!-- link pra tela de cadastro -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- página do Sasaki, estilizada com a paleta verde -->
+    <main class="character-page sasaki-page"> <!-- miolo principal com estilo da página de personagem -->
+        
+        <!-- foto do Sasaki -->
+        <img src="https://i.pinimg.com/736x/fa/d6/a6/fad6a6bdf8419c0595525682c721cbca.jpg" alt="Sasaki" class="character-portrait"> <!-- fotona com estilo de retrato -->
+        
+        <div class="character-info"> <!-- div com os textos e dados do cara -->
+            <!-- badges - tags coloridas do bootstrap pra destacar coisas -->
+            <h1>Sasaki <span class="badge bg-success rounded-pill">Protagonista</span></h1> <!-- nome dele + pílula verde de "Protagonista" -->
+            <p class="subtitle">O assalariado exausto <span class="badge bg-secondary">Vendas</span></p> <!-- subtítulo + tagzinha cinza do setor dele -->
+            <div class="character-details"> <!-- caixinha com o texto detalhado da história -->
+                <p>Sasaki é um trabalhador de escritório de meia-idade que está constantemente estressado e sobrecarregado por sua rotina diária corporativa no Japão. Sua vida se resume a trabalhar arduamente na área de vendas.</p>
+                <p>Seu único consolo no fim de dias difíceis é ver o sorriso brilhante e curativo da caixa Yamada no supermercado local e fumar um cigarro na área de fumantes nos fundos da loja, onde ele ocasionalmente encontra uma misteriosa jovem de jaqueta de couro.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- rodapé do site -->
+    <footer>
+        <p>Criado por um fã para fins de aprendizado.</p>
+    </footer>
+
+    <!-- javascript do bootstrap, sem ele a navbar do celular nem mexe -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

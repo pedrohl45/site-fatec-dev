@@ -1,0 +1,204 @@
+<!DOCTYPE html> <!-- isso aqui diz que é HTML5 -->
+<html lang="pt-br"> <!-- abre o html e define idioma em português do Brasil -->
+<head> <!-- head - parte invisível da página, tipo as configs -->
+    <meta charset="UTF-8"> <!-- pra aceitar acentos, ç e caracteres especiais sem quebrar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- faz o site funcionar certinho no celular também (responsivo) -->
+    <title>Smoking Behind the Supermarket with You</title> <!-- título que aparece na aba do navegador -->
+    <!-- css do Bootstrap direto do cdn, pra gente não precisar estilizar tudo na mão -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- nosso css próprio com os ajustes manuais -->
+</head>
+<body> <!-- body - tudo que aparece na tela começa aqui -->
+
+    <!-- navbar: menu do topo pras outras páginas, no celular encolhe e vira o menu hambúrguer (☰) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- navbar escura, no PC fica expandida -->
+        <div class="container"> <!-- centraliza tudo na página com largura máxima -->
+            <a class="navbar-brand" href="index.html">🚬 Super no Ura</a> <!-- logo/nome do site, se clicar volta pra home -->
+            <!-- aquele menuzinho ☰ que aparece no celular -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir navegação">
+                <span class="navbar-toggler-icon"></span> <!-- ícone das 3 linhas (☰) -->
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"> <!-- área que esconde ou mostra os links no celular -->
+                <ul class="navbar-nav ms-auto"> <!-- links do menu jogados pra direita (ms-auto) -->
+                    <li class="nav-item"> <!-- cada item do menu -->
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a> <!-- link ativo da página que estamos agora -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sasaki.html">Sasaki</a> <!-- link pra página do Sasaki -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="yamada.html">Yamada</a> <!-- link pra página da Yamada -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro.html">Cadastro</a> <!-- link pro formulário de cadastro -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- banner principal (hero) da home -->
+    <header class="hero"> <!-- seção hero com o fundo escuro -->
+        <div class="hero-content"> <!-- caixinha com o conteúdo do banner -->
+            <h1>Super no Ura de Yani Suu Futari</h1> <!-- título em japonês romanizado -->
+            <h2>(Smoking Behind the Supermarket with You)</h2> <!-- subtítulo com tradução em inglês -->
+            <p>Uma história relaxante sobre um assalariado cansado e uma misteriosa garota fumante atrás de um supermercado.</p> <!-- resuminho da história do mangá -->
+        </div>
+    </header>
+
+    <main> <!-- miolo principal da página começa aqui -->
+
+        <!-- alert informativo: aviso que dá pra fechar clicando no X -->
+        <div class="container mt-4"> <!-- container centralizado com margem no topo (mt-4) -->
+            <div class="alert alert-info alert-dismissible fade show" role="alert"> <!-- alerta azulzinho, com botão de fechar e fade suave -->
+                🔥 <strong>Novidade!</strong> Novos capítulos do mangá estão sendo lançados semanalmente. Fique ligado nas atualizações!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button> <!-- botãozinho de X pra fechar o alerta -->
+            </div>
+        </div>
+
+        <!-- carrossel: slider que passa as fotos sozinho e tem os botões de controle -->
+        <section class="container my-5"> <!-- container com margem em cima e embaixo (my-5) -->
+            <h2 class="text-center mb-4" style="color: #27ae60;">Galeria do Mangá</h2> <!-- título verdinho centralizado com margem embaixo -->
+            <div id="mangaCarousel" class="carousel slide" data-bs-ride="carousel"> <!-- carrossel que passa as imagens automaticamente -->
+                <!-- bolinhas indicadoras lá embaixo pra saber em qual slide tá -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#mangaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button> <!-- bolinha 1, já vem ativa de cara -->
+                    <button type="button" data-bs-target="#mangaCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button> <!-- bolinha 2 -->
+                    <button type="button" data-bs-target="#mangaCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button> <!-- bolinha 3 -->
+                </div>
+                <div class="carousel-inner rounded"> <!-- caixa onde ficam as imagens, com cantos arredondados -->
+                    <!-- slide 1: tem o active pra ser o primeiro que aparece -->
+                    <div class="carousel-item active">
+                        <img src="https://i.pinimg.com/736x/d6/29/5c/d6295ccf819c97715852a881f56e2fbc.jpg" class="d-block w-100 carousel-img" alt="Cena do Mangá 1"> <!-- imagem do slide 1 (depois trocar URL se quiser) -->
+                        <div class="carousel-caption d-none d-md-block"> <!-- legenda da foto, some no celular pra não tampar nada -->
+                            <h5>Cena 1</h5>
+                            <p>Descrição da cena 1</p>
+                        </div>
+                    </div>
+                    <!-- slide 2 -->
+                    <div class="carousel-item">
+                        <img src="https://i.pinimg.com/1200x/23/d6/fa/23d6fa2da2065138b55bb86bc86662ac.jpg" class="d-block w-100 carousel-img" alt="Cena do Mangá 2"> <!-- imagem do slide 2 (depois trocar URL se quiser) -->
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Cena 2</h5>
+                            <p>Descrição da cena 2</p>
+                        </div>
+                    </div>
+                    <!-- slide 3 -->
+                    <div class="carousel-item">
+                        <img src="https://i.pinimg.com/1200x/81/79/44/817944121cc36337f7c10f29c2013f6e.jpg" class="d-block w-100 carousel-img" alt="Cena do Mangá 3"> <!-- imagem do slide 3 (depois trocar URL se quiser) -->
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Cena 3</h5>
+                            <p>Descrição da cena 3</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- botão de voltar pro slide anterior (seta esquerda) -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#mangaCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span> <!-- ícone da setinha -->
+                    <span class="visually-hidden">Anterior</span> <!-- texto invisível que leitor de tela lê -->
+                </button>
+                <!-- botão de ir pro próximo slide (seta direita) -->
+                <button class="carousel-control-next" type="button" data-bs-target="#mangaCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- cards dos personagens: cada um tem card com foto, texto e botão estilizado -->
+        <section class="characters-section"> <!-- área onde lista os cards dos personagens -->
+            <h2>Escolha seu Personagem</h2>
+            <p>Clique nos cards para conhecer os personagens.</p>
+
+            <div class="row justify-content-center g-4 mt-3"> <!-- grid do bootstrap: centraliza os cards e g-4 dá o espaço entre eles -->
+                <!-- card do Sasaki -->
+                <div class="col-md-5"> <!-- no PC ocupa 5 de 12 colunas da tela -->
+                    <div class="card h-100 shadow"> <!-- card esticado em 100% de altura com sombrinha -->
+                        <img src="https://i.pinimg.com/736x/f4/6e/87/f46e879c8b80bf96f968310900d5c8d1.jpg" class="card-img-top" alt="Sasaki" style="height: 350px; object-fit: cover;"> <!-- foto no topo do card com cover pra não distorcer -->
+                        <div class="card-body text-center"> <!-- corpo do card com texto centralizado -->
+                            <h5 class="card-title">Sasaki</h5> <!-- nome do personagem -->
+                            <p class="card-text">O assalariado exausto que encontra paz nos fundos do supermercado.</p> <!-- resuminho sobre ele -->
+                            <!-- botão verde do bootstrap -->
+                            <a href="sasaki.html" class="btn btn-success">Conhecer Sasaki</a> <!-- botão verde que joga pra página dele -->
+                        </div>
+                    </div>
+                </div>
+                <!-- card da Yamada -->
+                <div class="col-md-5">
+                    <div class="card h-100 shadow">
+                        <img src="https://i.pinimg.com/736x/c1/81/98/c1819817a2fed81e1de041da5b2b4466.jpg" class="card-img-top" alt="Yamada" style="height: 350px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Yamada</h5>
+                            <p class="card-text">A caixa sorridente que esconde um segredo depois do expediente.</p>
+                            <!-- botão verde do bootstrap -->
+                            <a href="yamada.html" class="btn btn-success">Conhecer Yamada</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- chamada pra ação (CTA) convidando pro cadastro -->
+            <div class="newsletter-cta" style="text-align: center; margin-top: 60px; margin-bottom: 20px;">
+                <p style="margin-bottom: 15px; font-size: 1.2rem; color: #2c3e50; font-weight: bold;">Quer ficar por dentro das novidades do Anime e Mangá?</p>
+                <!-- botão escuro, grandão e com cantos bem arredondados -->
+                <a href="cadastro.html" class="btn btn-dark btn-lg rounded-pill px-5">Cadastre-se para Atualizações</a>
+            </div>
+        </section>
+
+        <!-- accordion: sanfona do FAQ com perguntas que expandem e fecham ao clicar -->
+        <section class="container my-5">
+            <h2 class="text-center mb-4" style="color: #27ae60;">Perguntas Frequentes</h2>
+            <div class="accordion" id="faqAccordion"> <!-- container da sanfona -->
+                <!-- pergunta 1 (já vem aberta) -->
+                <div class="accordion-item"> <!-- um bloco de pergunta da sanfona -->
+                    <h2 class="accordion-header"> <!-- cabeçalho onde a gente clica -->
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                            O que é "Smoking Behind the Supermarket with You"? <!-- texto da pergunta -->
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"> <!-- a classe "show" faz vir aberto por padrão -->
+                        <div class="accordion-body"> <!-- corpo com a resposta explicada -->
+                            É um mangá japonês (também conhecido como <em>"Super no Ura de Yani Suu Futari"</em>) que conta a história de Sasaki, um assalariado estressado, que encontra momentos de paz fumando nos fundos de um supermercado, onde conhece uma misteriosa jovem chamada Tayama. A série se destaca pelo clima relaxante e pelos diálogos sinceros entre os personagens.
+                        </div>
+                    </div>
+                </div>
+                <!-- pergunta 2 (essa já vem fechada) -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                            Qual é a relação entre Yamada e Tayama? <!-- texto da pergunta -->
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"> <!-- sem a classe "show", então começa fechadinho -->
+                        <div class="accordion-body">
+                            <strong>Spoiler!</strong> Yamada e Tayama são a mesma pessoa! Yamada é a caixa simpática do supermercado durante o expediente. Depois do trabalho, ela solta o cabelo, veste sua jaqueta de couro e se transforma em Tayama — a companheira de cigarro sarcástica e descolada que Sasaki encontra nos fundos da loja. Ele não faz ideia de que as duas são a mesma garota!
+                        </div>
+                    </div>
+                </div>
+                <!-- pergunta 3 (começa fechada também) -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                            O mangá vai ganhar anime?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Sim! O anime foi anunciado e está em produção. Cadastre-se na nossa newsletter para receber alertas assim que novas informações forem divulgadas sobre a data de estreia e o estúdio responsável pela adaptação.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- rodapé da página -->
+    <footer>
+        <p>Criado por um fã para fins de aprendizado.</p>
+    </footer>
+
+    <!-- JS do Bootstrap: sem esse script o menu hamburguer, carrossel, sanfona e alerta não funcionam -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
