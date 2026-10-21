@@ -1,0 +1,61 @@
+/* pagina da yamada / tayama */
+
+/* troca de personas da Yamada (atendente vs Tayama fumante) */
+.persona-yamada {
+    display: flex; /* foto e texto da Yamada lado a lado */
+    gap: 40px; /* 40px de espaço entre foto e texto */
+    align-items: flex-start; /* alinhados pelo topo */
+    width: 100%; /* pega a largura inteira */
+}
+
+.persona-tayama {
+    display: none; /* a persona Tayama começa escondida por padrão */
+}
+
+/* dark mode quando ativa a persona Tayama */
+body.tayama-mode {
+    background-color: #121212; /* fundo quase pretão */
+    color: #e0e0e0; /* texto clarinho pra dar contraste no escuro */
+}
+
+body.tayama-mode .character-page {
+    background-color: #1a1a1a; /* fundo cinza chumbo na área do personagem */
+    border-top: 5px solid #ff4d4d; /* linha vermelha no topo combinando com o visual da Tayama */
+    box-shadow: 0 5px 25px rgba(0,0,0,0.9); /* sombra bem mais forte e pesada */
+}
+
+body.tayama-mode .character-info h1 {
+    color: #ff4d4d; /* nome fica vermelhão */
+}
+
+body.tayama-mode .character-info .subtitle {
+    color: #888; /* subtítulo num cinza mais apagado */
+}
+
+body.tayama-mode .character-details p {
+    color: #e0e0e0; /* texto dos parágrafos fica claro */
+}
+
+body.tayama-mode .persona-yamada {
+    display: none; /* esconde a persona Yamada boazinha */
+}
+
+body.tayama-mode .persona-tayama {
+    display: flex; /* mostra a persona Tayama com cigarro */
+    gap: 40px; /* 40px separando a foto do texto */
+    align-items: flex-start; /* alinha tudo pelo topo */
+    width: 100%; /* pega a largura inteira */
+}
+
+/* o !important é pra ganhar do bg-dark do bootstrap */
+body.tayama-mode #yamada-navbar {
+    background-color: #1a1a1a !important; /* força a navbar a ficar escura no dark mode */
+}
+
+@media (max-width: 768px) {
+    .persona-yamada, body.tayama-mode .persona-tayama { /* empilha a foto e o texto das personas */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

@@ -1,0 +1,51 @@
+/* pagina de cadastro */
+
+/* formulário de cadastro na newsletter */
+.form-container {
+    width: 100%; /* ocupa a largura que tiver disponível */
+    max-width: 600px; /* mas não passa de 600px */
+    margin: 0 auto; /* centraliza tudo na tela */
+    padding: 20px; /* espaçamentozinho interno de 20px */
+}
+
+.form-container h1 {
+    color: #27ae60; /* título verde */
+    margin-bottom: 10px; /* respiro embaixo */
+    text-align: center; /* centraliza o texto */
+    font-size: 2.5rem; /* título bem grande */
+}
+
+.form-container .subtitle {
+    text-align: center; /* subtítulo no centro */
+    color: #7f8c8d; /* cinzinha suave */
+    margin-bottom: 30px; /* espacinho antes do formulário */
+    font-size: 1.1rem; /* tamanho do texto */
+}
+
+.newsletter-form {
+    display: flex; /* flex pra organizar os campos */
+    flex-direction: column; /* empilha tudo em coluna, um embaixo do outro */
+    gap: 20px; /* 20px de espaço entre cada campo */
+    background: #fff; /* fundo branco na caixinha do form */
+    padding: 30px; /* respiro de 30px dentro da caixa */
+    border-radius: 10px; /* cantinhos arredondados */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* sombrinha bem leve em volta */
+}
+
+/* borda verde quando clica no campo */
+.newsletter-form .form-control:focus,
+.newsletter-form .form-select:focus {
+    border-color: #27ae60; /* borda verde no foco */
+    box-shadow: 0 0 0 0.25rem rgba(39, 174, 96, 0.25); /* brilhinho verde ao redor */
+}
+
+/* checkbox verdinho quando tá marcado */
+.newsletter-form .form-check-input:checked {
+    background-color: #27ae60; /* fundo verde quando marcado */
+    border-color: #27ae60; /* borda verde quando marcado */
+}
+
+@media (max-width: 768px) {
+    .form-container h1 { font-size: 1.8rem; } /* título do formulário menor */
+    .newsletter-form { padding: 20px; } /* menos espaçamento interno no form */
+}

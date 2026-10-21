@@ -1,0 +1,94 @@
+/* home */
+
+/* hero - o banner grandão da home */
+.hero {
+    background-color: #2c3e50; /* azul escuro pro fundo do banner */
+    color: #ecf0f1; /* texto esbranquiçado pra dar contraste com o azul */
+    text-align: center; /* joga todo o texto pro centro */
+    padding: 80px 20px; /* respiro interno: 80px cima/baixo e 20px pros lados */
+    border-bottom: 5px solid #27ae60; /* faixinha verde embaixo do banner */
+}
+
+.hero h1 {
+    font-size: 2.5rem; /* título principal bem grandão */
+    margin-bottom: 10px; /* espacinho embaixo pro subtítulo não colar */
+    color: #27ae60; /* verde de destaque pro título */
+}
+
+.hero h2 {
+    font-size: 1.2rem; /* subtítulo um pouco menor */
+    font-weight: 300; /* letra mais fininha */
+    margin-bottom: 20px; /* espacinho embaixo do subtítulo */
+    color: #bdc3c7; /* cinza claro pro subtítulo ficar mais discreto */
+}
+
+/* seção de personagens na home */
+.characters-section {
+    max-width: 1000px; /* não deixa passar de 1000px de largura */
+    margin: 60px auto; /* centraliza tudo na página e dá 60px de respiro em cima e embaixo */
+    text-align: center; /* centraliza os textos da seção */
+    padding: 0 20px; /* respiro de 20px nas laterais */
+}
+
+.characters-section h2 {
+    font-size: 2rem; /* tamanho do título da seção */
+    color: #27ae60; /* verdinho no título */
+    margin-bottom: 10px; /* respiro embaixo */
+}
+
+.characters-section p {
+    color: #7f8c8d; /* cinza pro parágrafo */
+}
+
+/* carrossel com os quadros do mangá */
+#mangaCarousel {
+    max-width: 550px; /* segura em 550px porque as páginas do mangá são verticais */
+    margin: 0 auto; /* centraliza o carrossel certinho */
+}
+
+.carousel-img {
+    height: 700px; /* altura generosa de 700px pra caber a página toda */
+    object-fit: contain; /* mostra a imagem inteira sem distorcer e sem cortar nada */
+    background-color: #f4f7f6; /* mesma cor de fundo da página pras sobras ficarem invisíveis */
+    border-radius: 10px; /* cantinhos levemente arredondados */
+}
+
+/* cards dos personagens */
+.card {
+    border: none; /* tira aquela borda padrão chata do Bootstrap */
+    border-radius: 15px; /* cantinhos bem arredondados */
+    overflow: hidden; /* se vazar qualquer coisa do card, corta fora */
+    transition: transform 0.3s; /* animação suave pro efeito de hover */
+}
+
+.card:hover {
+    transform: translateY(-8px); /* sobe o card quando passa o mouse por cima */
+}
+
+.card-title {
+    font-size: 1.5rem; /* tamanho do nome no card */
+    color: #2c3e50; /* azul escuro pro nome */
+    font-weight: bold; /* deixa o nome em negrito */
+}
+
+.card-text {
+    color: #7f8c8d; /* cinza pro textinho do card */
+}
+
+/* accordion das perguntas frequentes */
+.accordion-button:not(.collapsed) {
+    background-color: #e8f5e9; /* verdinho claro de fundo quando a pergunta tiver aberta */
+    color: #2c3e50; /* texto azul escuro quando aberto */
+}
+
+.accordion-button:focus {
+    border-color: #27ae60; /* borda verde quando clica ou foca */
+    box-shadow: 0 0 0 0.25rem rgba(39, 174, 96, 0.25); /* brilhinho verde ao redor */
+}
+
+@media (max-width: 768px) {
+    .hero { padding: 45px 15px; } /* diminui o banner no celular */
+    .hero h1 { font-size: 1.6rem; } /* título menor pra caber na telinha */
+    .hero h2 { font-size: 1rem; } /* subtítulo menor também */
+    .carousel-img { height: 500px; } /* diminui a altura do carrossel no celular */
+}

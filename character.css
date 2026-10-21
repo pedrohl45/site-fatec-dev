@@ -1,0 +1,49 @@
+/* parte em comum do sasaki e da yamada */
+
+.character-portrait {
+    width: 300px; /* foto fixa em 300px de largura */
+    border-radius: 10px; /* cantinhos arredondados na foto */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* sombrinha atrás da imagem */
+    object-fit: cover; /* preenche o espaço sem distorcer a imagem */
+}
+
+.character-info {
+    flex: 1; /* ocupa todo o resto do espaço ao lado da foto */
+}
+
+.character-info h1 {
+    font-size: 3rem; /* nomão do personagem bem grande */
+    color: #27ae60; /* nome verde */
+    transition: color 0.4s; /* transição suave na troca de cor */
+}
+
+.character-info .subtitle {
+    font-size: 1.2rem; /* tamanho do subtítulo (tipo 'O assalariado exausto') */
+    color: #7f8c8d; /* cinza pro subtítulo */
+    margin-bottom: 30px; /* espacinho antes do texto da bio */
+    font-style: italic; /* itálico pra dar aquele charme */
+    transition: color 0.4s; /* transição suave na cor */
+}
+
+.character-details p {
+    line-height: 1.8; /* espaçamento bom entre linhas pra facilitar a leitura */
+    margin-bottom: 20px; /* espaço entre um parágrafo e outro */
+    font-size: 1.1rem; /* tamanho bom pro texto da história */
+    color: #333; /* cor escura pro texto */
+}
+
+/* tags/etiquetas coladas nos nomes */
+.character-info h1 .badge {
+    font-size: 0.4em; /* tag proporcionalmente menor que o título h1 */
+    vertical-align: middle; /* centraliza a tag na altura da linha */
+}
+
+.character-info .subtitle .badge {
+    font-size: 0.75em; /* tag proporcional ao tamanho do subtítulo */
+    vertical-align: middle; /* centraliza no meio certinho */
+}
+
+@media (max-width: 768px) {
+    .character-portrait { width: 100%; max-width: 280px; } /* foto ocupa a largura, mas trava em 280px */
+    .character-info h1 { font-size: 2rem; } /* nome do personagem menor no celular */
+}
