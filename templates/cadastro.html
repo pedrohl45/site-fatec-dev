@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro - Super no Ura{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}">
+{% endblock %}
+
+{% block content %}
+    <!-- miolo da página aproveitando o fundo verde das páginas de personagem -->
+    <main class="character-page" style="display: block;"> <!-- display: block sobrescreve o flexbox pra poder fluir o formulário de cima pra baixo -->
+        <div class="form-container"> <!-- caixinha centralizada do formulário -->
+            <h1>Receba Atualizações!</h1> <!-- título principal da página -->
+            <p class="subtitle">Inscreva-se para não perder nenhuma novidade sobre o mangá e o futuro anime.</p> <!-- subtítulo explicando o que é -->
+            
+            <!-- mensagens que o Flask manda depois do POST (sucesso ou erro no banco) -->
+            {% with mensagens = get_flashed_messages(with_categories=true) %}
+                {% for categoria, msg in mensagens %}
+                <div class="alert alert-{{ categoria }} alert-dismissible fade show" role="alert"> <!-- verde se deu certo, vermelho se deu ruim -->
+                    {{ msg }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button> <!-- botãozinho X pra fechar o alerta -->
+                </div>
+                {% endfor %}
+            {% endwith %}
+
+            <!-- formulário com os estilos de input do Bootstrap -->
+            <form action="{{ url_for('cadastro') }}" method="POST" class="newsletter-form" id="formNewsletter"> <!-- manda pro Flask, que grava no PostgreSQL -->
+                
+                <!-- campo do nome -->
+                <div class="mb-3"> <!-- mb-3 dá um respiro embaixo de 1rem -->
+                    <label for="nome" class="form-label">Nome completo:</label> <!-- rótulo do campo -->
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required> <!-- input com estilo do bootstrap e required pra não deixar em branco -->
+                </div>
+                
+                <!-- campo do e-mail -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="seuemail@exemplo.com" required> <!-- type="email" já valida se tem @ e formato certo -->
+                </div>
+
+                <!-- seleção dropdown -->
+                <div class="mb-3">
+                    <label for="personagem" class="form-label">Quem é seu personagem favorito?</label>
+                    <select class="form-select" id="personagem" name="personagem"> <!-- dropdown estilizado pelo bootstrap -->
+                        <option value="sasaki">Sasaki (O Assalariado)</option> <!-- primeira opção -->
+                        <option value="yamada">Yamada (A Caixa)</option> <!-- segunda opção -->
+                        <option value="tayama">Tayama (A Fumante)</option> <!-- terceira opção -->
+                        <option value="outro">Outro</option> <!-- quarta opção -->
+                    </select>
+                </div>
+
+                <!-- caixinha de marcar (checkbox) -->
+                <div class="form-check mb-3"> <!-- form-check alinha direitinho o checkbox com o texto -->
+                    <input class="form-check-input" type="checkbox" id="notificacoes" name="notificacoes" checked> <!-- checked = já vem marcadinho por padrão -->
+                    <label class="form-check-label" for="notificacoes">Quero receber alertas de novos capítulos por e-mail</label> <!-- texto do lado da caixinha -->
+                </div>
+                
+                <!-- botão de submit -->
+                <button type="submit" class="btn btn-success btn-lg w-100">Cadastrar na Newsletter</button> <!-- botão verde grandão (btn-lg) ocupando a largura inteira (w-100) -->
+            </form>
+
+            <!-- quantos fãs já estão gravados no banco (vem do SELECT COUNT no app.py) -->
+            {% if total is not none %}
+            <p class="text-center text-muted mt-4">📬 {{ total }} fã(s) já cadastrado(s) no banco de dados.</p>
+            {% endif %}
+        </div>
+    </main>
+{% endblock %}

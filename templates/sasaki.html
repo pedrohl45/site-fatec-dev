@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Sasaki - Personagem{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/character.css') }}">
+{% endblock %}
+
+{% block content %}
+    <!-- página do Sasaki, estilizada com a paleta verde -->
+    <main class="character-page sasaki-page"> <!-- miolo principal com estilo da página de personagem -->
+        
+        <!-- foto do Sasaki -->
+        <img src="https://i.pinimg.com/736x/fa/d6/a6/fad6a6bdf8419c0595525682c721cbca.jpg" alt="Sasaki" class="character-portrait"> <!-- fotona com estilo de retrato -->
+        
+        <div class="character-info"> <!-- div com os textos e dados do cara -->
+            <!-- badges - tags coloridas do bootstrap pra destacar coisas -->
+            <h1>Sasaki <span class="badge bg-success rounded-pill">Protagonista</span></h1> <!-- nome dele + pílula verde de "Protagonista" -->
+            <p class="subtitle">O assalariado exausto <span class="badge bg-secondary">Vendas</span></p> <!-- subtítulo + tagzinha cinza do setor dele -->
+            <div class="character-details"> <!-- caixinha com o texto detalhado da história -->
+                <p>Sasaki é um trabalhador de escritório de meia-idade que está constantemente estressado e sobrecarregado por sua rotina diária corporativa no Japão. Sua vida se resume a trabalhar arduamente na área de vendas.</p>
+                <p>Seu único consolo no fim de dias difíceis é ver o sorriso brilhante e curativo da caixa Yamada no supermercado local e fumar um cigarro na área de fumantes nos fundos da loja, onde ele ocasionalmente encontra uma misteriosa jovem de jaqueta de couro.</p>
+            </div>
+        </div>
+    </main>
+{% endblock %}
