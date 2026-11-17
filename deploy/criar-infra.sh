@@ -3,6 +3,7 @@
 #   1 instância PostgreSQL + 3 instâncias Flask + 1 nginx fazendo load balance
 # Uso: bash deploy/criar-infra.sh
 set -euo pipefail
+shopt -s inherit_errexit
 
 NOME=${NOME:-pedro}
 TIPO=${TIPO:-t3.medium}      # 2 vCPU / 4 GB
@@ -50,9 +51,9 @@ liberar() {  # sg porta origem(cidr ou sg)
 }
 
 echo ">> Security Groups..."
-SG_WEB=$(criar_sg "sg-web-$NOME" "Flask: SSH e porta 5000")
-SG_DB=$(criar_sg "sg-db-$NOME" "PostgreSQL: SSH e 5432 so das instancias web")
-SG_LB=$(criar_sg "sg-lb-$NOME" "Nginx load balancer: SSH e HTTP")
+SG_WEB=$(criar_sg "web-$NOME-sg" "Flask: SSH e porta 5000")
+SG_DB=$(criar_sg "db-$NOME-sg" "PostgreSQL: SSH e 5432 so das instancias web")
+SG_LB=$(criar_sg "lb-$NOME-sg" "Nginx load balancer: SSH e HTTP")
 liberar "$SG_WEB" 22 0.0.0.0/0;  liberar "$SG_WEB" 5000 0.0.0.0/0
 liberar "$SG_DB" 22 0.0.0.0/0;   liberar "$SG_DB" 5432 "$SG_WEB"
 liberar "$SG_LB" 22 0.0.0.0/0;   liberar "$SG_LB" 80 0.0.0.0/0
